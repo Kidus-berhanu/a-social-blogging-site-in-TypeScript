@@ -1,0 +1,78 @@
+interface User {
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+}
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  author: User;
+  createdAt: Date;
+  updatedAt: Date;
+  likes: number;
+  comments: Comment[];
+}
+
+interface Comment {
+  id: number;
+  content: string;
+  author: User;
+  post: Post;
+  createdAt: Date;
+  updatedAt: Date;
+  likes: number;
+}
+
+class UserSession {
+  private user: User;
+
+  public login(username: string, password: string): boolean {
+    // Authenticate user and set user session if successful
+    // Return true if successful, false otherwise
+  }
+
+  public logout(): void {
+    // Clear user session
+  }
+
+  public getUser(): User {
+    // Return the current user session
+  }
+}
+
+class BloggingService {
+  public createPost(post: Post): Post {
+    // Create a new post and return it
+  }
+
+  public getPost(postId: number): Post {
+    // Retrieve the post with the given ID and return it
+  }
+
+  public updatePost(post: Post): Post {
+    // Update the given post and return it
+  }
+
+  public deletePost(postId: number): void {
+    // Delete the post with the given ID
+  }
+
+  public createComment(comment: Comment): Comment {
+    // Create a new comment and return it
+  }
+
+  public getComment(commentId: number): Comment {
+    // Retrieve the comment with the given ID and return it
+  }
+
+  public updateComment(comment: Comment): Comment {
+    // Update the given comment and return it
+  }
+
+  public deleteComment(commentId: number): void {
+    // Delete the comment with the given ID
+  }
+}
